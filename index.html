@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#062743" />
+    <meta
+      name="description"
+      content="Swimmy Jail: a Jonah-inspired underwater arcade game."
+    />
+    <title>Swimmy Jail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="game-frame" aria-label="Swimmy Jail game">
+        <canvas id="game" width="900" height="600" aria-label="Swim through the underwater passages"></canvas>
+
+        <div id="start-screen" class="screen start-screen">
+          <p class="eyebrow">THE STORY OF JONAH</p>
+          <h1>Swimmy <span>Jail</span></h1>
+          <blockquote>
+            “From inside the fish Jonah prayed to the Lord his God.”
+            <cite>Jonah 2:1</cite>
+          </blockquote>
+          <p class="instructions">Guide the great fish through the deep. Avoid the reef, kelp, and ancient ruins.</p>
+          <button id="start-button" class="primary-button" type="button">Dive In</button>
+          <p class="control-tip">Press <kbd>Space</kbd>, click, or tap to swim</p>
+        </div>
+
+        <div id="hud" class="hud" hidden>
+          <div class="score-label">SCORE <strong id="score">0</strong></div>
+          <button id="sound-button" class="sound-button" type="button" aria-label="Mute sound">♪</button>
+        </div>
+
+        <div id="game-over-screen" class="screen game-over-screen" hidden>
+          <p class="eyebrow">THE DEEP GOT YOU</p>
+          <h2>Back to the belly!</h2>
+          <p class="final-score">Your journey: <strong id="final-score">0</strong></p>
+          <div class="button-row">
+            <button id="restart-button" class="primary-button" type="button">Swim Again</button>
+            <button id="share-button" class="secondary-button" type="button">Share Score</button>
+          </div>
+        </div>
+      </section>
+      <p class="footer-note">A small underwater adventure inspired by the Book of Jonah.</p>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
