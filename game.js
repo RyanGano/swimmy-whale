@@ -235,8 +235,9 @@ function playTone(frequency, duration, type) {
 
 async function shareScore() {
   const siteUrl = window.location.href;
-  const text = `I swam through ${state.score} passages in Swimmy Jail! Can you guide the great fish farther? ${siteUrl}`;
-  const shareData = { title: "Swimmy Jail", text, url: siteUrl };
+  const message = `I swam through ${state.score} passages in Swimmy Jail! Can you guide the great fish farther?`;
+  const text = `${message} ${siteUrl}`;
+  const shareData = { title: "Swimmy Jail", text: message, url: siteUrl };
   try {
     if (navigator.share) await navigator.share(shareData);
     else if (navigator.clipboard) {
